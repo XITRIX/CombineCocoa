@@ -12,6 +12,7 @@ import Foundation
 
 // MARK: - Publisher
 @available(iOS 13.0, *)
+@available(tvOS 13.0, *)
 public extension Combine.Publishers {
     /// A publisher which wraps objects that use the Target & Action mechanism,
     /// for example - a UIBarButtonItem which isn't KVO-compliant and doesn't use UIControlEvent(s).
@@ -56,6 +57,7 @@ public extension Combine.Publishers {
 
 // MARK: - Subscription
 @available(iOS 13.0, *)
+@available(tvOS 13.0, *)
 private extension Combine.Publishers.ControlTarget {
     private final class Subscription<S: Subscriber, Control: AnyObject>: Combine.Subscription where S.Input == Void {
         private var subscriber: S?

@@ -182,7 +182,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -201,7 +201,6 @@
 				OBJ_55 /* Gemfile.lock */,
 				OBJ_56 /* CombineCocoa.podspec */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -294,7 +293,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +368,7 @@
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -385,8 +385,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
@@ -396,6 +397,7 @@
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -409,8 +411,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;

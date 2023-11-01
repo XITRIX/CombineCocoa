@@ -11,6 +11,7 @@ import UIKit
 import Combine
 
 @available(iOS 13.0, *)
+@available(tvOS 13.0, *)
 public extension UITextView {
   /// A Combine publisher for the `UITextView's` value.
   ///

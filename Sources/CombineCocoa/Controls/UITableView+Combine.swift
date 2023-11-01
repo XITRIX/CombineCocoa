@@ -13,6 +13,7 @@ import Combine
 
 // swiftlint:disable force_cast
 @available(iOS 13.0, *)
+@available(tvOS 13.0, *)
 public extension UITableView {
     /// Combine wrapper for `tableView(_:willDisplay:forRowAt:)`
     var willDisplayCellPublisher: AnyPublisher<(cell: UITableViewCell, indexPath: IndexPath), Never> {
@@ -102,6 +103,7 @@ public extension UITableView {
             .eraseToAnyPublisher()
     }
 
+#if !os(tvOS)
     /// Combine wrapper for `tableView(_:willBeginEditingRowAt:)`
     var willBeginEditingRowPublisher: AnyPublisher<IndexPath, Never> {
         let selector = #selector(UITableViewDelegate.tableView(_:willBeginEditingRowAt:))
@@ -117,6 +119,7 @@ public extension UITableView {
             .map { $0[1] as! IndexPath }
             .eraseToAnyPublisher()
     }
+#endif
 
     override var delegateProxy: DelegateProxy {
         TableViewDelegateProxy.createDelegateProxy(for: self)
@@ -124,6 +127,7 @@ public extension UITableView {
 }
 
 @available(iOS 13.0, *)
+@available(tvOS 13.0, *)
 private class TableViewDelegateProxy: DelegateProxy, UITableViewDelegate, DelegateProxyType {
     func setDelegate(to object: UITableView) {
         object.delegate = self

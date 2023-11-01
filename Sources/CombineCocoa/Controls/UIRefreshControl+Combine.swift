@@ -10,6 +10,7 @@
 import Combine
 import UIKit
 
+#if !os(tvOS)
 @available(iOS 13.0, *)
 public extension UIRefreshControl {
     /// A publisher emitting refresh status changes from this refresh control.
@@ -18,4 +19,5 @@ public extension UIRefreshControl {
                   .eraseToAnyPublisher()
     }
 }
+#endif
 #endif

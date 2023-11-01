@@ -10,6 +10,7 @@
 import Combine
 import UIKit
 
+#if !os(tvOS)
 @available(iOS 13.0, *)
 public extension UIStepper {
     /// A publisher emitting value changes for this stepper.
@@ -18,4 +19,5 @@ public extension UIStepper {
                   .eraseToAnyPublisher()
     }
 }
+#endif
 #endif

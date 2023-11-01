@@ -10,6 +10,7 @@
 import Combine
 import UIKit
 
+#if !os(tvOS)
 @available(iOS 13.0, *)
 public extension UISwitch {
     /// A publisher emitting on status changes for this switch.
@@ -18,4 +19,5 @@ public extension UISwitch {
                   .eraseToAnyPublisher()
     }
 }
+#endif
 #endif

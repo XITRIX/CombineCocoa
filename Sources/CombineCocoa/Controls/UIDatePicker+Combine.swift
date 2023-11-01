@@ -10,6 +10,7 @@
 import Combine
 import UIKit
 
+#if !os(tvOS)
 @available(iOS 13.0, *)
 public extension UIDatePicker {
     /// A publisher emitting date changes from this date picker.
@@ -24,4 +25,5 @@ public extension UIDatePicker {
                   .eraseToAnyPublisher()
     }
 }
+#endif
 #endif
