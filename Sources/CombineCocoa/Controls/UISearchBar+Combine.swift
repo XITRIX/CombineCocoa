@@ -31,6 +31,15 @@ public extension UISearchBar {
             .map { _ in () }
             .eraseToAnyPublisher()
     }
+    
+    /// Combine wrapper for `UISearchBarDelegate.searchBar(_:selectedScopeButtonIndexDidChangePublisher:)`
+    var selectedScopeButtonIndexDidChangePublisher: AnyPublisher<Int, Never> {
+        let selector = #selector(UISearchBarDelegate.searchBar(_:selectedScopeButtonIndexDidChange:))
+        return delegateProxy
+            .interceptSelectorPublisher(selector)
+            .map { $0[1] as! Int }
+            .eraseToAnyPublisher()
+    }
 
 #if !os(tvOS)
     /// Combine wrapper for `UISearchBarDelegate.searchBarCancelButtonClicked(_:)`
